@@ -1,39 +1,50 @@
-# Copper-Modeling
-![image](https://github.com/balajeeycp2k/Copper-Modeling/assets/112715562/b055ed7e-1bfe-4339-9c8e-c70dd3fcd35c)
-Data preprocessing:
+# Industrial-Copper-Modeling-Project
 
-Reads a CSV file into a pandas DataFrame.
-Handles missing values and incorrect data formats.
-Converts date columns to the appropriate format.
-Converts certain columns to numeric types.
-Cleans up the "material_ref" column by removing leading zeros and replacing missing values with "unknown".
-Drops rows with remaining missing values.
-Data visualization:
+Application Link: https://tulasinnd-industrial-copper.streamlit.app/
 
-Plots the distribution of various columns using seaborn and matplotlib.
-Feature engineering:
+Demo Video Link: https://www.linkedin.com/posts/tulasi-n-49b6111b0_python-machinelearning-decisiontrees-activity-7058375260022181888-oCFS?utm_source=share&utm_medium=member_desktop
 
-Applies logarithmic transformations to skewed columns ('quantity tons', 'thickness', 'selling_price').
-Drops rows with negative or zero values in 'selling_price', 'quantity tons', and 'thickness'.
-Correlation analysis:
+## Introduction
+This project aims to develop two machine learning models for the copper industry to address the challenges of predicting selling price and lead classification. Manual predictions can be time-consuming and may not result in optimal pricing decisions or accurately capture leads. The models will utilize advanced techniques such as data normalization, outlier detection and handling, handling data in the wrong format, identifying the distribution of features, and leveraging tree-based models, specifically the decision tree algorithm, to predict the selling price and leads accurately.
 
-Calculates the correlation matrix between selected columns.
-Plots a heatmap of the correlation matrix using seaborn.
-Decision Tree Regressor:
+## Regression model details
+The copper industry deals with less complex data related to sales and pricing. However, this data may suffer from issues such as skewness and noisy data, which can affect the accuracy of manual predictions. Dealing with these challenges manually can be time-consuming and may not result in optimal pricing decisions. A machine learning regression model can address these issues by utilizing advanced techniques such as data normalization, outlier detection and handling, handling data in wrong format, identifying the distribution of features, and leveraging tree-based models, specifically the decision tree algorithm.
 
-Encodes categorical features using one-hot encoding.
-Splits the data into training and testing sets.
-Defines a grid of hyperparameters for the DecisionTreeRegressor.
-Performs a grid search to find the best hyperparameters using cross-validation.
-Trains the DecisionTreeRegressor with the best hyperparameters.
-Evaluates the model using mean squared error (MSE) and R-squared metrics.
+## Classification model details
+Another area where the copper industry faces challenges is in capturing the leads. A lead classification model is a system for evaluating and classifying leads based on how likely they are to become a customer. You can use the STATUS variable with WON being considered as Success and LOST being considered as Failure and remove data points other than WON, LOST STATUS values.
 
+## Solution
 
+The solution includes the following steps:
 
-The required libraries are imported, including pandas, mysql.connector, streamlit, plotly.express, os, json, PIL, and git.repo.base.Repo.
-The page configuration is set using the set_page_config method of streamlit, specifying the page title, icon, layout, initial sidebar state, and menu items.
-The sidebar is created using st.sidebar, and an option menu is displayed with four options: "Home", "Top Charts", "Explore Data", and "About".
-The code handles different menu options using if statements.
-For the "Home" menu, an image and some introductory text are displayed.
-For the "Top Charts" menu, different visualizations are shown based on the selected type (transactions or users) and the chosen year and quarter.
-For the "Explore Data" menu, various data exploration visualizations are displayed, such as India map visualizations and bar charts for transaction types and district-wise data
+Exploring skewness and outliers in the dataset.
+
+Transforming the data into a suitable format and performing any necessary cleaning and pre-processing steps.
+
+Developing a machine learning regression model which predicts the continuous variable 'Selling_Price' using the decision tree regressor.
+
+Developing a machine learning classification model which predicts the Status: WON or LOST using the decision tree classifier.
+
+Creating a Streamlit page where you can insert each column value and get the Selling_Price predicted value or Status (Won/Lost).
+
+## Requirements
+
+This project requires the following libraries to be installed:
+
+NumPy
+
+Pandas
+
+Scikit-learn
+
+Streamlit
+
+## Getting Started
+
+Clone the repository.
+
+Install the required libraries.
+
+Run the Streamlit app using the command: streamlit run app.py.
+
+Enter the values for each column to get the Selling_Price predicted value or Status (Won/Lost).
